@@ -108,12 +108,13 @@ If you like this project, give it a ⭐ on GitHub!
 
 
 
-# 🚀 GPS-Based City Route Finder using A* Algorithm  
-### 📍*(Artificial Intelligence Problem Solving Project)*
+# 🚀 GPS-Based City Route Finder using A* Algorithm
+
+### 📍 *(Artificial Intelligence Problem Solving Project)*
 
 ---
 
-## 🎯Objective
+## 🎯 Objective
 
 The objective of this project is to apply Artificial Intelligence problem-solving techniques to find the most optimal route between two locations in a city using search algorithms. The system simulates a GPS-based navigation system with intelligent pathfinding capabilities.
 
@@ -123,10 +124,7 @@ The objective of this project is to apply Artificial Intelligence problem-solvin
 
 This project focuses on designing a GPS-based navigation system that determines the most efficient route between two locations in a city. The city is modeled as a weighted graph or grid, where each node represents a location and each edge represents a path with an associated travel cost such as distance or time. Some paths may be blocked due to obstacles like traffic or construction.
 
-The syste allows users to interactively select a start location and a destination through a graphical interface. Using the A* (A-star) search algorithm, the system computes the optimal route by considering both the actual cost from the start node and a heuristic estimate of the remaining distance to the goal.
-
-The solution ensures that a valid and optimal path is found whenever one exists. The final output displays the computed route, the total travel cost, and the number of nodes explored during the search process.
-
+The system allows users to interactively select a start location and a destination through a graphical interface. Using the **A*** (A-star) search algorithm, the system computes the optimal route by considering both the actual cost from the start node and a heuristic estimate of the remaining distance to the goal.
 
 ---
 
@@ -134,20 +132,21 @@ The solution ensures that a valid and optimal path is found whenever one exists.
 
 The city is represented as a 2D weighted grid:
 
-- Each cell represents a node (location)
-- Movement between cells represents edges (paths)
-- Each edge has an associated cost
+* Each cell represents a node (location)
+* Movement between cells represents edges (paths)
+* Each edge has an associated cost
 
 ### Grid Values:
 
-| Value | Meaning |
-|------|--------|
-| 0 | Normal road (cost = 1) |
-| -1 | Obstacle / Wall (blocked) |
-| 2-9 | Traffic zones (higher cost) |
+| Value | Meaning                     |
+| ----- | --------------------------- |
+| 0     | Normal road (cost = 1)      |
+| -1    | Obstacle / Wall (blocked)   |
+| 2-9   | Traffic zones (higher cost) |
 
 ### Movement:
-- Allowed in four directions: Up, Down, Left, Right
+
+* Up, Down, Left, Right
 
 ---
 
@@ -155,181 +154,117 @@ The city is represented as a 2D weighted grid:
 
 ### 🔹 A* Search Algorithm (Primary)
 
-A* is a heuristic-based algorithm that guarantees the optimal path.
+**Formula:**
+f(n) = g(n) + h(n)
 
-Formula: f(n) = g(n) + h(n)
-
-Where:
-- g(n) = actual cost from start to node n  
-- h(n) = heuristic estimate from node n to goal  
-- f(n) = total estimated cost  
+* g(n) → actual cost from start
+* h(n) → heuristic estimate
+* f(n) → total cost
 
 ---
 
 ### 🔹 Dijkstra’s Algorithm
 
-- Special case of A* where h(n) = 0  
-- Explores all possible paths  
-- Guarantees optimal solution  
-- Slower compared to A*  
+* No heuristic
+* Guarantees optimal path
+* Slower than A*
 
 ---
 
 ### 🔹 Breadth-First Search (BFS)
 
-- Uses FIFO queue  
-- Finds shortest path in terms of steps  
-- Does not consider weights, so may not give optimal cost  
+* Uses queue
+* Fast but ignores weights
+* Not optimal for weighted graphs
 
 ---
 
-## 📐Heuristic Functions
+## 📐 Heuristic Functions
 
-###  Manhattan Distance
+### Manhattan Distance
+
 |x1 - x2| + |y1 - y2|
 
-- Best suited for grid movement without diagonals  
-
 ### Euclidean Distance
-√((x1 - x2)^2 + (y1 - y2)^2)
 
-- More realistic distance calculation  
+√((x1 - x2)² + (y1 - y2)²)
 
 ---
 
 ## 📊 Algorithm Comparison
 
-| Feature | A* | Dijkstra | BFS |
-|--------|----|----------|-----|
-| Optimal Path | Yes | Yes | No (for weighted graphs) |
-| Uses Heuristic | Yes | No | No |
-| Speed | Fastest | Medium | Fast but inaccurate |
-| Nodes Explored | Least | More | Most |
+| Feature        | A*   | Dijkstra | BFS  |
+| -------------- | ---- | -------- | ---- |
+| Optimal Path   | Yes  | Yes      | No   |
+| Uses Heuristic | Yes  | No       | No   |
+| Speed          | Fast | Medium   | Fast |
 
 ---
 
 ## 🧩 Features
 
-- Interactive grid-based UI  
-- Set Start (Green) and End (Red) nodes  
-- Draw obstacles (walls)  
-- Add traffic weights  
-- Run A*, Dijkstra, BFS  
-- Algorithm comparison mode  
-- Step-by-step visualization  
-- Animation speed control  
-- Heuristic selection (Manhattan / Euclidean)  
-- Displays:
-  - Optimal path  
-  - Total cost  
-  - Nodes explored  
-  - Execution time  
+* Interactive grid UI
+* Start (Green) & End (Red) nodes
+* Obstacles and traffic weights
+* A*, Dijkstra, BFS support
+* Visualization & animation
+* Displays path, cost, nodes explored
 
 ---
 
 ## ▶️ Execution Steps
 
-1. Clone the repository  
-   git clone <https://github.com/GobikhaRamesh/AI_ProblemSolving_RA2411026050205.git>  
-     
-   cd AI_ProblemSolving_RA2411026050205 
+```bash
+git clone https://github.com/your-username/AI_ProblemSolving.git
+cd AI_ProblemSolving
+pip install -r requirements.txt
+python app.py
+```
 
-2. Install dependencies
-   pip install -r requirements.txt  
+Open browser:
 
-3. Run the application  
-   python app.py  
-
-4. Open browser  
-   http://localhost:5000  
-
----
-
-## 🧾Sample Input
-
-Grid:
-[
- [0, 0, 0],
- [0, -1, 0],
- [0, 0, 0]
-]
-
-Start: (0,0)  
-Goal: (2,2)  
-
----
-
-## 📤Sample Output
-
-Algorithm: A*  
-
-Path:  
-(0,0) → (1,0) → (2,0) → (2,1) → (2,2)  
-
-Total Cost: 4  
-Nodes Explored: 7  
-Execution Time: ~0.05 ms  
+```id="h8h3m2"
+http://localhost:5000
+```
 
 ---
 
 ## 📁 Project Structure
-```
-AI_ProblemSolving_<RA2411026050241>/
+
+```bash
+AI_ProblemSolving/
 ├── app.py
 ├── algorithms/
-│   ├── __init__.py
-│   ├── astar.py
-│   ├── dijkstra.py
-│   └── bfs.py
 ├── templates/
-│   └── index.html
 ├── static/
-│   ├── style.css
-│   └── script.js
 ├── images/
-│   ├── ui.png
-│   ├── astar.png
-│   ├── walls.png
-│   ├── weights.png
-│   └── compare.png
 ├── README.md
-├── requirements.txt
-└── Procfile
-``` 
+```
 
 ---
+
 ## 🌐 Live Demo
-Click below to open the deployed application:
+
 https://route-finder-bkpi.onrender.com
+
+---
 
 ## 🖥 Screenshots
 
+(Add your images here if needed)
 
-### 🔹 Initial UI
-![UI](images/ui.png)
-
-### 🔹 A* Path Result
-![A*](images/astar.png)
-
-
-### 🔹 Weighted Traffic Routing
-![Weights](images/weights.png)
-
-### 🔹 Algorithm Comparison
-![Comparison](images/compare.png)
 ---
 
 ## 👤 Author
 
-Name: Gobikha Ramesh 
-
-Register Number: RA2411026050205
-
+Name: Gobikha
+**Project:** AI Problem Solving
 
 ---
 
-## 🏁Conclusion
+## 🏁 Conclusion
 
-This project demonstrates the application of AI search algorithms in solving real-world navigation problems. Among all algorithms, A* provides the best performance by combining actual cost and heuristic estimation, making it highly efficient for GPS-based systems.
+This project demonstrates how AI search algorithms can solve real-world navigation problems efficiently. The **A*** algorithm provides the best performance by combining actual cost and heuristic estimation.
 
 ---
+
