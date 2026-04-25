@@ -120,11 +120,11 @@ Where:
 ## ▶️ Execution Steps
 
 1. Clone the repository  
-   git clone <https://github.com/subhashreec1013-spec/AI_ProblemSolving_RA2411026050241>  
+   git clone <https://github.com/subhashreec1013-spec/AI_ProblemSolving_RA2411026050205>  
      
-   cd AI_ProblemSolving_RA2411026050241 
+   cd AI_ProblemSolving_RA2411026050205 
 
-2. Install dependencies  
+2. Install dependencies
    pip install -r requirements.txt  
 
 3. Run the application  
