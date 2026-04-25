@@ -120,7 +120,7 @@ Where:
 ## ▶️ Execution Steps
 
 1. Clone the repository  
-   git clone <https://github.com/subhashreec1013-spec/AI_ProblemSolving_RA2411026050205>  
+   git clone <https://github.com/GobikhaRamesh/AI_ProblemSolving_RA2411026050205.git>  
      
    cd AI_ProblemSolving_RA2411026050205 
 
